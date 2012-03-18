@@ -3,7 +3,7 @@
 
 global.sys = require(/^v0\.[012]/.test(process.version) ? "sys" : "util");
 var fs = require("fs");
-var uglify = require("uglify-js"), // symlink ~/.node_libraries/uglify-js.js to ../uglify-js.js
+var uglify = require("../uglify-js"), // symlink ~/.node_libraries/uglify-js.js to ../uglify-js.js
     consolidator = uglify.consolidator,
     jsp = uglify.parser,
     pro = uglify.uglify;
@@ -32,7 +32,8 @@ var options = {
                 indent_start: 0,
                 quote_keys: false,
                 space_colon: false,
-                inline_script: false
+                inline_script: false,
+                licenses: true
         },
         make: false,
         output: true            // stdout
@@ -85,6 +86,10 @@ out: while (args.length > 0) {
             case "--no-copyright":
             case "-nc":
                 options.show_copyright = false;
+                break;
+            case "--no-licenses":
+            case "-nl":
+                options.codegen_options.licenses = false;
                 break;
             case "-o":
             case "--output":

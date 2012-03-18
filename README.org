@@ -224,6 +224,10 @@ Supported options:
   comment tokens in the generated code (assumed to be copyright information
   etc.).  If you pass this it will discard it.
 
+- =-nl= or =--no-licenses= --- by default, =uglifyjs= will keep the text
+  marked /*! */ in the generated code (assumed to be license information
+  etc.).  If you pass this it will discard it.
+
 - =-o filename= or =--output filename= --- put the result in =filename=.  If
   this isn't given, the result goes to standard output (or see next one).
 

@@ -23,6 +23,7 @@ function ParserTestSuite(callback){
 		["var abc = 5;", "Regular variable statement with assignment"],
 		["/* */;", "Multiline comment"],
 		['/** **/;', 'Double star multiline comment'],
+		["/*! */;", "License statement"],
 		["var f = function(){;};", "Function expression in var assignment"],
 		['hi; // moo\n;', 'single line comment'],
 		['var varwithfunction;', 'Dont match keywords as substrings'], // difference between `var withsomevar` and `"str"` (local search and lits)
